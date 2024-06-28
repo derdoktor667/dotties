@@ -1,0 +1,33 @@
+[window]
+   opacity = 0.9
+   dimensions = { columns = 125, lines = 35 }
+
+[env]
+   term = "xterm-256color"
+
+# Default colors
+[colors.primary]
+   background = '#000000'
+   foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+   black   = '#000000'
+   red     = '#cd0000'
+   green   = '#00cd00'
+   yellow  = '#cdcd00'
+   blue    = '#3b48e6'
+   magenta = '#cd00cd'
+   cyan    = '#00cdcd'
+   white   = '#e5e5e5'
+
+# Bright colors
+[colors.bright]
+   black   = '#7f7f7f'
+   red     = '#ff0000'
+   green   = '#00ff00'
+   yellow  = '#ffff00'
+   blue    = '#5c5cff'
+   magenta = '#ff00ff'
+   cyan    = '#00ffff'
+   white   = '#ffffff'
