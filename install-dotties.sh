@@ -26,26 +26,6 @@ show_help() {
   done
 }
 
-# Überprüfen Sie die übergebenen Switches
-case "$1" in
-  --force)
-    force_copy=true
-    copy_files
-    ;;
-  --help)
-    show_help
-    exit 0
-    ;;
-  --run)
-    force_copy=false
-    copy_files
-    ;;
-  *)
-    show_help
-    exit 0
-    ;;
-esac
-
 copy_files() {
 # Wechseln Sie in das Git-Repository
 cd "$source_files" || { echo "Konnte nicht in das Source Dir wechseln"; exit 1; }
@@ -73,3 +53,23 @@ done
 
 echo "Das Kopieren der ausgewählten Dateien ist abgeschlossen."
 }
+
+# Überprüfen Sie die übergebenen Switches
+case "$1" in
+  --force)
+    force_copy=true
+    copy_files
+    ;;
+  --help)
+    show_help
+    exit 0
+    ;;
+  --run)
+    force_copy=false
+    copy_files
+    ;;
+  *)
+    show_help
+    exit 0
+    ;;
+esac
