@@ -17,7 +17,7 @@ show_help() {
   echo
   echo "Optionen:"
   echo "  --run      Notwendig um überhaupt was zu tun"
-  echo "  --force    Überschreibt bestehende Dateien im Zielordner."
+  echo "  --force    Überschreibt bestehende Dateien im Zielordner. OHNE --run möglich"
   echo "  --help     Zeigt diese Hilfe an und listet die zu kopierenden Dateien auf."
   echo
   echo "Zu kopierende Dateien:"
