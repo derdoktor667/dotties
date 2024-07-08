@@ -38,6 +38,19 @@ if [ -d "$HOME/Android/Sdk" ]; then
     export PATH="$PATH:$ANDROID_SDK/platform-tools"
 fi
 
+# ...Arduino Stuff
+if [ -d "$HOME/Arduino" ]; then
+    export PATH="$PATH:$HOME/Arduino/libraries"
+fi
+
+if [ -d "/opt/arduino-ide" ]; then
+    export ARDUINO_PATH="/opt/arduino-ide"
+fi
+
+if [ -d "$HOME/.arduino15" ]; then
+    export PATH="$PATH:$HOME/.arduino15"
+fi
+
 # ...dotNet support
 if [ -d "$HOME/.dotnet/tools" ]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
