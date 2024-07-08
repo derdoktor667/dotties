@@ -7,6 +7,8 @@ target_folder=$PWD
 # Liste der zu kopierenden Dateien (Pfade relativ zum Repository)
 declare -a files_to_copy=(
   ".config/alacritty/alacritty.toml"
+  ".config/i3/config"
+  ".config/sway/config"
   ".bashrc"
 )
 
@@ -34,6 +36,9 @@ cd "$source_files" || { echo "Konnte nicht in das Source Dir wechseln"; exit 1; 
 for file in "${files_to_copy[@]}"; do
   # Erstellen Sie den Pfad des Zielordners, der die Ordnerstruktur beibehält
   target_path="$target_folder/${file}"
+
+  # Erstellen Sie die notwendigen Ordner im Zielordner
+  mkdir -p "$(dirname "$target_path")"
 
   # Kopieren Sie die Datei, überschreiben Sie sie bei Verwendung von --force
   if [[ $force_copy == true ]]; then
