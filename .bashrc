@@ -1,10 +1,15 @@
-# ~/.bashrc
+#!/bin/bash
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # ...the promt
 PS1='\[\e[38;5;34m\]\u@\h\[\e[0m\]: \[\e[38;5;33m\]\w/\[\e[0m\] \\$ '
+
+# ...Editors
+export HISTCONTROL=ignoreboth
+export EDITOR="nano"
+export VISUAL="nano"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -24,6 +29,7 @@ shopt -s checkwinsize
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
+# shellcheck source=/dev/null
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -32,9 +38,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#
+# shellcheck source=/dev/null
 if [ -x ~/.profile ]; then
-    source ~/.profile
+    source "$HOME/.profile"
 fi
 
 # ...enable ccache
@@ -43,8 +49,9 @@ if [ -d "/usr/lib/ccache/bin" ]; then
 fi
 
 # ...Alacritty completion
-if [ -x ~/.bash_completion/alacritty ]; then
-    source ~/.bash_completion/alacritty
+# shellcheck source=/dev/null
+if [ -x "$HOME/.bash_completion/alacritty" ]; then
+    source "$HOME/.bash_completion/alacritty"
 fi
 
 # ...Android SDK
