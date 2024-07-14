@@ -31,11 +31,11 @@ shopt -s checkwinsize
 # sources /etc/bash.bashrc).
 # shellcheck source=/dev/null
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 # shellcheck source=/dev/null
@@ -82,7 +82,9 @@ fi
 
 # ...vcpkg
 if [ -d "$HOME/Github/vcpkg" ]; then
+    export VCPKG_FORCE_SYSTEM_BINARIES=true
     export VCPKG_ROOT=$HOME/Github/vcpkg
+    export PATH="$PATH:$VCPKG_ROOT"
 fi
 
 # Espressif IDE
