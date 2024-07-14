@@ -6,6 +6,9 @@
 # ...the promt
 PS1='\[\e[38;5;34m\]\u@\h\[\e[0m\]: \[\e[38;5;33m\]\w/\[\e[0m\] \\$ '
 
+# ...using various architectures
+MACHINE_ARCH=$(uname -m)
+
 # ...Editors
 export HISTCONTROL=ignoreboth
 export EDITOR="nano"
@@ -82,9 +85,13 @@ fi
 
 # ...vcpkg
 if [ -d "$HOME/Github/vcpkg" ]; then
-    export VCPKG_FORCE_SYSTEM_BINARIES=true
     export VCPKG_ROOT=$HOME/Github/vcpkg
     export PATH="$PATH:$VCPKG_ROOT"
+    
+    # ...export filtering
+    if ! [ "$MACHINE_ARCH" == "x86_64" ]; then
+        export VCPKG_FORCE_SYSTEM_BINARIES=true
+    fi
 fi
 
 # Espressif IDE
