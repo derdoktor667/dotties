@@ -8,15 +8,11 @@
 # Version:      0.1
 # =============================================================================
 
+# ...getting settings
+source "$PWD/targets.conf"
+
 source_files=$HOME
 target_folder=$PWD
-
-declare -a files_to_copy=(
-    ".config/alacritty/alacritty.toml"
-    ".config/i3/config"
-    ".config/sway/config"
-    ".bashrc"
-)
 
 # 
 show_help() {
