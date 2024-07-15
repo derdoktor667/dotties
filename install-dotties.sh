@@ -4,7 +4,7 @@
 # Name:         install-dotties.sh
 # Info:         ...installs configured files and foo
 # Author:       derdoktor667
-# Date:         $(date +%Y-%m-%d)
+# Date:         14.07.2024
 # Version:      0.1
 # =============================================================================
 
